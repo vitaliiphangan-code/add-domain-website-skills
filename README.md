@@ -1,5 +1,7 @@
 # Frontend business websites
 
+[![AgentShield Security](https://merx.help/badge/A+.svg)](https://merx.help/shield)
+
 Use this when someone asks:
 
 - make a website for my bakery
