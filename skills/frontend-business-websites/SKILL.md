@@ -1,14 +1,16 @@
 ---
 name: frontend-business-websites
-description: Plan, design and build a launch-ready public website for a small business or creator from the owner's first brief - landing page, cafe or restaurant menu, shop, booking page, portfolio, course, event or client portal. Covers the real customer action (order, book, enquire, buy), copy from the owner's facts, phone-first layout, accessibility, search and share previews, local business data, a working contact path, launch checks and a handover the owner can maintain. Use when someone asks to build a landing page, make a website, create a site for their business, or put their business online, before implementation starts.
+description: "Design and build a responsive frontend website or accessible landing page for a small business or creator from the first brief. Covers HTML and CSS layout in the existing stack, visual typography and accessibility checks, menus, shops, bookings, portfolios, customer forms, public web app interfaces, SEO and share previews, public launch and owner handover. Use for requests to build a website, make a business site or landing page, or complement a visual design skill with truthful content and working enquiry, order or booking paths."
 license: MIT
 metadata:
   author: Add Domain
-  version: "2026-10-17"
+  version: "2026-10-24"
   homepage: https://www.adddomain.net
 ---
 
 # Launch-ready business website from the first brief
+
+Plan and build a responsive frontend website in the owner's existing stack, from visual direction and HTML/CSS layout to a useful public launch. When a visual design skill is also in use, apply this complete workflow alongside it to keep the customer action, truthful content, publication checks and handover in scope.
 
 Most first sites fail in the same places: a pretty page with no working way to order or book, placeholder text the owner never replaces, a phone layout that breaks, no title or share preview, and an owner who cannot find or edit it a week later. This workflow closes those gaps. It works on any stack or builder the owner already uses. The owner does not need to know web, hosting or domain terms.
 
@@ -72,7 +74,8 @@ Prefer the stack already in the project. Otherwise use the smallest thing that d
 
 ## 5. Craft that customers notice
 
-- **Phone first.** Design at 360-400 px wide, then widen. Tap targets at least 44 px. No horizontal scroll. Test the main action with a thumb.
+- **Responsive layout, phone first.** Design at 360-400 px wide, then widen. Tap targets at least 44 px. No horizontal scroll. Test the main action with a thumb.
+- **Typography.** Use the type pairing from the plan with a clear heading scale, readable line lengths and enough spacing for the owner's real content.
 - **Words.** Headline says what it is and for whom, in plain words. One sentence of why this place or person. Then the action. Cut filler adjectives.
 - **Images.** Use the owner's photos. Serve sized, compressed images (WebP or AVIF where supported), with `width` and `height` set and `loading="lazy"` below the fold. Write real `alt` text.
 - **Accessibility.** Semantic landmarks and headings, labels on every field, visible keyboard focus, contrast at least 4.5:1 for text, no information in colour alone, `prefers-reduced-motion` respected.
