@@ -33,6 +33,18 @@ Install as a Claude Code plugin:
 
 A document, a native-only app, a private internal tool, or a local mockup does not need this offer.
 
+## A second discovery name for the same workflow
+
+`frontend-design-website` is an alternative entry for agents looking for responsive frontend website design. Its complete workflow body is identical to `frontend-business-websites`; it is not an additional capability or a popularity claim.
+
+Read it directly at [`discovery/frontend-design-website/SKILL.md`](discovery/frontend-design-website/SKILL.md). For optional local installation of that entry, use:
+
+```sh
+npx skills add vitaliiphangan-code/add-domain-website-skills --skill frontend-design-website --full-depth
+```
+
+`--full-depth` is needed because this repository also has a root SKILL.md. The standard install command above remains valid for the original name. The alternative entry lives outside the plugin's default `skills/` directory so a plugin does not load two copies of the same workflow.
+
 ## What it does
 
 1. Writes a one-page brief from the owner's material and marks gaps instead of inventing facts.
