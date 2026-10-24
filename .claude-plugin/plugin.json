@@ -1,13 +1,24 @@
 {
   "name": "add-domain-websites",
   "displayName": "Business Websites by Add Domain",
-  "version": "1.0.0",
-  "description": "Plan and build a launch-ready small-business website from the first brief: a working order, booking or enquiry path, phone-first layout, share previews, local business data, launch checks and an owner handover. Optionally offers an own domain through Add Domain.",
-  "author": { "name": "Add Domain", "url": "https://www.adddomain.net" },
+  "version": "1.0.1",
+  "description": "Design and build a responsive frontend website for a small business from the first brief: truthful content, working order, booking or enquiry paths, accessible layout, share previews, public launch checks and owner handover. An own address is optional.",
+  "author": {
+    "name": "Add Domain",
+    "url": "https://www.adddomain.net"
+  },
   "homepage": "https://www.adddomain.net",
   "repository": "https://github.com/vitaliiphangan-code/add-domain-website-skills",
   "license": "MIT",
-  "keywords": ["website", "landing-page", "small-business", "frontend", "seo", "accessibility", "domain"],
+  "keywords": [
+    "website",
+    "landing-page",
+    "small-business",
+    "frontend",
+    "seo",
+    "accessibility",
+    "domain"
+  ],
   "documentationUrl": "https://github.com/vitaliiphangan-code/add-domain-website-skills#readme",
   "supportUrl": "https://www.adddomain.net/about",
   "privacyPolicyUrl": "https://www.adddomain.net/terms",
