@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Enquiry draft — static website example</title>
+<style>
+:root{font:17px/1.55 system-ui,sans-serif;color:#20312c;background:#f3f5ef}*{box-sizing:border-box}body{margin:0;padding:28px 18px}main{max-width:680px;margin:auto;background:white;border:1px solid #d7dfd6;border-radius:18px;padding:clamp(22px,5vw,44px)}h1{line-height:1.15;font-size:clamp(30px,6vw,44px)}label{display:block;font-weight:600;margin-top:20px}input,textarea{display:block;font:inherit;width:100%;padding:12px;border:1px solid #6a7a71;border-radius:6px;margin-top:7px}textarea{min-height:130px;resize:vertical}button,a.action{font:inherit;display:inline-block;border-radius:6px;border:1px solid #245842;padding:12px 18px;background:#245842;color:white;margin:16px 8px 0 0;text-decoration:none;cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #b05012;outline-offset:3px}.note{padding:14px;background:#f5efdc;border-left:4px solid #a46916}small{display:block}#status{min-height:2em} [hidden]{display:none!important}
+</style></head><body><main>
+<p>Copyable example · no backend required</p><h1>Prepare an enquiry</h1>
+<p id="mode" class="note">Prototype — sending is not connected. You can prepare and copy a draft. Nothing is sent by this page.</p>
+<form id="enquiry">
+<label for="name">Your name<input id="name" name="name" autocomplete="name" maxlength="120" required></label>
+<label for="email">Your email<input id="email" name="email" type="email" autocomplete="email" maxlength="254" required></label>
+<label for="message">What would you like to ask?<textarea id="message" name="message" maxlength="3000" required></textarea></label>
+<button type="submit">Prepare draft</button>
+</form>
+<section id="result" hidden aria-labelledby="draft-title"><h2 id="draft-title">Review your draft</h2>
+<label for="draft">Message to copy<textarea id="draft" readonly></textarea></label>
+<button id="copy" type="button">Copy draft</button><a id="email-link" class="action" hidden>Open email draft</a>
+<small>You review and send the message in your own email app. Opening a draft does not send it.</small></section>
+<p id="status" role="status" aria-live="polite"></p>
+<details><summary>Connect this example to your business</summary><p>In this file set OWNER_EMAIL to an address supplied by the owner. Leave it empty until confirmed. This enables an email draft, not delivery tracking. For a service-backed form, replace the draft handler with the owner's endpoint and show success only after that service confirms acceptance. Handover: [form endpoint] still needs configuration.</p></details>
+</main><script type="module">
+// Set only to the business owner's confirmed address. Never invent a recipient.
+const OWNER_EMAIL = "";
+
+export function recipientLink(recipient, body) {
+  const value = String(recipient || "");
+  if (!value || value.length > 254 || !/^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9.-]*[A-Za-z0-9])?\.[A-Za-z]{2,}$/.test(value)) return null;
+  return "mailto:" + value.split("@").map(encodeURIComponent).join("@") + "?subject=" + encodeURIComponent("Website enquiry") + "&body=" + encodeURIComponent(body);
+}
+export function makeDraft(values) {
+  const take = (name, max) => String(values[name] || "").trim().slice(0, max);
+  const name = take("name",120), email = take("email",254), message = take("message",3000);
+  if (!name || !email || !message) throw new Error("Complete your name, email and message first.");
+  return "Website enquiry\nName: " + name + "\nEmail: " + email + "\n\n" + message;
+}
+export async function copyDraft(text, clipboard) {
+  try { if (!clipboard?.writeText) return false; await clipboard.writeText(text); return true; }
+  catch { return false; }
+}
+if (typeof document !== "undefined") {
+  const form = document.getElementById("enquiry"), draft = document.getElementById("draft"), status = document.getElementById("status"), emailLink = document.getElementById("email-link");
+  if (recipientLink(OWNER_EMAIL,"")) document.getElementById("mode").textContent = "Draft mode — this page prepares a message for the owner's confirmed email address. Nothing is sent automatically.";
+  form.addEventListener("input", () => {
+    if (!draft.value) return;
+    draft.value = "";
+    document.getElementById("result").hidden = true;
+    emailLink.hidden = true;
+    emailLink.removeAttribute("href");
+    status.textContent = "Details changed. Prepare a new draft before copying.";
+  });
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    try {
+      draft.value = makeDraft(Object.fromEntries(new FormData(form)));
+      document.getElementById("result").hidden = false;
+      const link = recipientLink(OWNER_EMAIL, draft.value);
+      emailLink.hidden = !link;
+      if (link) emailLink.href = link; else emailLink.removeAttribute("href");
+      status.textContent = link ? "Draft prepared. Review it, then open your email app to send." : "Draft prepared. Copy it; the owner still needs to connect a contact or form endpoint. Nothing has been sent.";
+      draft.focus();
+    } catch (error) { status.textContent = error.message; }
+  });
+  document.getElementById("copy").addEventListener("click", async () => {
+    const text = draft.value;
+    const copied = await copyDraft(text, navigator.clipboard);
+    if (draft.value !== text) return;
+    if (!copied) { draft.focus(); draft.select(); }
+    status.textContent = copied ? "Draft copied. Nothing has been sent." : "Copy is unavailable. The draft is selected; use your device's Copy command. Nothing has been sent.";
+  });
+}
+</script></body></html>
