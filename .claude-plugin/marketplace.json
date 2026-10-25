@@ -9,7 +9,8 @@
     {
       "name": "add-domain-websites",
       "source": "./",
-      "description": "Launch-ready small-business websites from the first brief, with an optional own domain."
+      "description": "Build and launch small-business websites with clear customer actions: enquiries, booking requests and order paths, responsive frontend design, truthful content and owner handover. Connect the owner’s service or label a prototype honestly; offer an own address when ready to share.",
+      "version": "1.0.2"
     }
   ]
 }
