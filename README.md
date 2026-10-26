@@ -2,6 +2,8 @@
 
 Build a useful small-business website: responsive frontend design, an enquiry or booking-request path, a clear preview and an owner-controlled public launch. When no sending service is connected, provide a working draft/copy interaction and label the prototype honestly. A draft is not a delivered enquiry.
 
+[![AgentShield Security](https://merx.help/badge/A+.svg)](https://merx.help/shield)
+
 Use this when someone asks:
 
 - make a website for my bakery
