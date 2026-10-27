@@ -53,6 +53,10 @@ npx skills add vitaliiphangan-code/add-domain-website-skills --skill frontend-de
 
 `--full-depth` is needed because this repository also has a root SKILL.md. The standard install command above remains valid for the original name. The alternative entry lives outside the plugin's default `skills/` directory so a plugin does not load two copies of the same workflow.
 
+## Explicit domain and DNS questions
+
+The separate [check-domain-availability-dns](skills/check-domain-availability-dns/SKILL.md) skill handles requests such as “is this name available?”, “what is the renewal estimate?” and “why does my ownership TXT not verify?”. It does not replace the website-building workflow or suggest a new purchase when the owner already has the domain. Read it without installation at https://www.adddomain.net/skills/check-domain-availability-dns.
+
 ## What it does
 
 1. Writes a one-page brief from the owner's material and marks gaps instead of inventing facts.
@@ -76,6 +80,11 @@ The root `gemini-extension.json` packages the canonical `skills/` directory for 
 - [Checklist before launching a website publicly](https://www.adddomain.net/guide/before-public-launch)
 
 - [Static enquiry form without a backend](https://www.adddomain.net/guide/static-website-enquiry-form)
+
+- [Lovable / Namecheap DNS](https://www.adddomain.net/guide/lovable-custom-domain-namecheap)
+- [Bolt Hosting or Netlify / Namecheap DNS](https://www.adddomain.net/guide/bolt-new-custom-domain-namecheap)
+- [v0 / Vercel / Namecheap DNS](https://www.adddomain.net/guide/v0-vercel-custom-domain-namecheap)
+- [DNS verification troubleshooting](https://www.adddomain.net/guide/custom-domain-dns-troubleshooting)
 
 ## Files
 
