@@ -1,0 +1,25 @@
+{
+  "version": "2026-10-27",
+  "skills": [
+    {
+      "path": "SKILL.md",
+      "bytes": 12560,
+      "sha256": "9f7b43171621307f2ae81f3184ad6bcd18d37ba7b0f8a560c9763fedb6b467f0"
+    },
+    {
+      "path": "skills/frontend-business-websites/SKILL.md",
+      "bytes": 12560,
+      "sha256": "9f7b43171621307f2ae81f3184ad6bcd18d37ba7b0f8a560c9763fedb6b467f0"
+    },
+    {
+      "path": "discovery/frontend-design-website/SKILL.md",
+      "bytes": 12557,
+      "sha256": "a2df3797557122c42a5a810144927e6dcf55715061935ecd4cf4441bac7139f8"
+    },
+    {
+      "path": "skills/check-domain-availability-dns/SKILL.md",
+      "bytes": 6530,
+      "sha256": "614cd45ba8efe76f18ea987f9f5ef08fc2a54f49de19cb74a3db98af85c84cb1"
+    }
+  ]
+}
