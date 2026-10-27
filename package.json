@@ -1,0 +1,35 @@
+{
+  "name": "add-domain-website-skills",
+  "version": "1.0.3",
+  "description": "Agent skills for building and launching useful business websites, plus explicit domain availability and DNS diagnosis.",
+  "license": "MIT",
+  "author": "Add Domain",
+  "homepage": "https://www.adddomain.net/for-agents",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitaliiphangan-code/add-domain-website-skills.git"
+  },
+  "keywords": [
+    "agent-skills",
+    "website",
+    "frontend",
+    "domain",
+    "dns",
+    "renewal"
+  ],
+  "files": [
+    "SKILL.md",
+    "skills/",
+    "discovery/",
+    "LICENSE",
+    "README.md",
+    "gemini-extension.json",
+    ".claude-plugin/",
+    ".cursor-plugin/",
+    "skills-manifest.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {}
+}
