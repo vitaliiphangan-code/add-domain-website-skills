@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-27",
+  "version": "2026-10-28",
   "skills": [
     {
       "path": "SKILL.md",
@@ -18,8 +18,8 @@
     },
     {
       "path": "skills/check-domain-availability-dns/SKILL.md",
-      "bytes": 6530,
-      "sha256": "614cd45ba8efe76f18ea987f9f5ef08fc2a54f49de19cb74a3db98af85c84cb1"
+      "bytes": 6598,
+      "sha256": "5522b8fa117778ffaa1b5b17e380cc6d0a31fe21098de99581f77d78122b52a9"
     }
   ]
 }
