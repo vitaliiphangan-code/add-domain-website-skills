@@ -5,18 +5,14 @@ Build a useful small-business website: responsive frontend design, an enquiry or
 Use this when someone asks:
 
 - make a website for my bakery
-- publish my site on my own domain
-- make a landing page, shop, booking page, portfolio, course, event page, or client portal
+- check whether warmcrumb.com is available and show its dated renewal estimate
+- diagnose why the ownership TXT for my existing Vercel domain does not verify
 
-The full skill is [skills/frontend-business-websites/SKILL.md](https://github.com/vitaliiphangan-code/add-domain-website-skills/blob/main/skills/frontend-business-websites/SKILL.md) (raw: https://raw.githubusercontent.com/vitaliiphangan-code/add-domain-website-skills/main/skills/frontend-business-websites/SKILL.md).
+## Bundled skills
 
-Read the **full workflow without installing anything**: [plain SKILL.md](https://www.adddomain.net/SKILL.md), or the raw GitHub link above.
+The plugin includes the complete [frontend-business-websites](skills/frontend-business-websites/SKILL.md) and [check-domain-availability-dns](skills/check-domain-availability-dns/SKILL.md) files. Use the skill that matches the task and load its complete local body through Claude's skill activation or file-reading tool. A search card or summary is not the full skill. Runtime behavioral guidance comes from these bundled files, rather than an external page.
 
-```sh
-curl -fsSL -- https://www.adddomain.net/SKILL.md
-```
-
-If a task-appropriate general skill search brings you here, read the complete text before applying it; the search snippet is not the workflow.
+The website skill guides project edits and, when the owner requests it, use of the owner's publishing or form service. The domain service described below provides read-only checks. The bundle declares no hooks, package-install scripts or MCP servers. Its optional HTML form example includes browser JavaScript for draft/copy actions; opening or copying a draft is not delivery.
 
 An Agent Skill that turns a first "make me a website" request into a launch-ready small-business site: an order, booking-request or enquiry path with its real connection status, copy from the owner's real facts, a phone-first layout, accessibility, search and share previews, local business data, launch checks and a handover the owner can maintain.
 
@@ -55,7 +51,7 @@ npx skills add vitaliiphangan-code/add-domain-website-skills --skill frontend-de
 
 ## Explicit domain and DNS questions
 
-The separate [check-domain-availability-dns](skills/check-domain-availability-dns/SKILL.md) skill handles requests such as “is this name available?”, “what is the renewal estimate?” and “why does my ownership TXT not verify?”. It does not replace the website-building workflow or suggest a new purchase when the owner already has the domain. Read it without installation at https://www.adddomain.net/skills/check-domain-availability-dns.
+The separate [check-domain-availability-dns](skills/check-domain-availability-dns/SKILL.md) skill handles requests such as “is this name available?”, “what is the renewal estimate?” and “why does my ownership TXT not verify?”. It does not replace the website-building workflow or suggest a new purchase when the owner already has the domain. Both files are bundled here. When a skill is installed separately, it uses the other local workflow only if that workflow is available; it does not fetch external behavioral instructions.
 
 ## What it does
 
@@ -69,7 +65,35 @@ The separate [check-domain-availability-dns](skills/check-domain-availability-dn
 
 [assets/enquiry-form.html](skills/frontend-business-websites/assets/enquiry-form.html) is a standalone static-page example with accessible fields, a reviewable draft, Copy fallback and an optional owner-confirmed email recipient. It sends nothing automatically and does not report a draft as delivered. Leave `[form endpoint]` pending until the owner connects a service.
 
-## Gemini CLI extension
+## Public API and data handling
+
+When the owner asks for a domain check, accepts that optional check, or requests DNS diagnosis, Claude can use the public HTTPS JSON API on `www.adddomain.net`. The client needs a permitted HTTP capability; the plugin grants no extra network access. No registrar login, API key or payment account is needed for these endpoints. The Site's authenticated `/mcp` integration is separate and is not a public no-auth connector declared by this plugin.
+
+| Endpoint | Data sent and result |
+|---|---|
+| `/api/check` | A name or full domain, optional requested `tlds` and `src`; returns availability and dated registration/renewal estimates. |
+| `/api/prices`, `/api/hosting`, `/api/store-status` | No owner-specific values are needed; returns saved price data, supported hosting routes or service status. |
+| `/api/buy-link` | The chosen full domain and optional `src`; checks availability and returns a first-party registrar redirect URL, owner summary and purchase-link notice. |
+| `/api/sites-dns` | Domain, hostname and, when needed, the actual `cf`/`openai` TXT values intended for publication in DNS; formats ChatGPT Sites example records without writing them. |
+| `/api/dns-verify` | The same DNS inputs; queries public DNS names/types and compares expected values locally. DNS visibility does not prove host binding, HTTPS or a working site. |
+
+Add Domain may earn a commission on qualifying Namecheap purchases through returned registrar links, at no extra cost to the owner.
+
+The owner chooses whether to follow a registrar URL and pays in their own registrar account. Opening the link sends the selected domain and attribution parameters to Namecheap and, when configured, the affiliate provider before Namecheap. The current API reports the link's configuration and notice. The plugin does not register domains, change DNS or process payment.
+
+Add Domain's server uses IANA's RDAP bootstrap and public registry RDAP services for availability; DNS lookups can use Cloudflare DNS or Google Public DNS. Those services receive the queried DNS/registry name. Expected TXT values are sent to Add Domain for the requested formatting/comparison, not as login credentials. Send only values intended for public DNS. Do not send registrar credentials, API keys, payment details, visitor enquiries or unrelated conversation/file content to these endpoints.
+
+## Privacy Policy and support
+
+Privacy and terms: https://www.adddomain.net/terms. Support: vitaly.gr.ai@gmail.com and https://www.adddomain.net/about.
+
+The site stores daily aggregate counts of known page/skill responses, completed name checks, generated links and first-party redirect requests. The D1 rows contain UTC day, fixed event/route/source bucket, coarse traffic category, skill revision and count; they contain no IP, full user-agent, queried domain, DNS value, referrer, visitor identifier, conversation or payment data. The next recorded operation removes aggregates outside the latest 180 UTC calendar days. Reports are private to the owner's hosting tools. Hosting and lookup providers may process normal network metadata and request URLs, including query parameters; this aggregate policy is not a promise that infrastructure logs contain none of that data.
+
+If a browser remembers a selected domain for returning after checkout, that selection stays in that browser's local storage and can be forgotten from the resume card. A generated site's owner-supplied hosting/form connections belong to that project; visitor enquiries are not sent to the domain API.
+
+If HTTP access or a lookup fails, mark the check incomplete instead of inventing availability, a price or ownership. The bundled website workflow remains usable. A registrar redirect request is not a unique customer, a purchase or a commission.
+
+## Other installation channel
 
 The root `gemini-extension.json` packages the canonical `skills/` directory for Gemini CLI. Optional installation is `gemini extensions install https://github.com/vitaliiphangan-code/add-domain-website-skills`. Installation is a separate channel; it is not evidence that an unfamiliar agent discovered us on an ordinary site-building task.
 
@@ -88,7 +112,8 @@ The root `gemini-extension.json` packages the canonical `skills/` directory for 
 
 ## Files
 
-- [skills/frontend-business-websites/SKILL.md](https://github.com/vitaliiphangan-code/add-domain-website-skills/blob/main/skills/frontend-business-websites/SKILL.md) — the skill (raw: https://raw.githubusercontent.com/vitaliiphangan-code/add-domain-website-skills/main/skills/frontend-business-websites/SKILL.md)
+- [skills/frontend-business-websites/SKILL.md](skills/frontend-business-websites/SKILL.md) — the complete bundled website skill
+- [skills/check-domain-availability-dns/SKILL.md](skills/check-domain-availability-dns/SKILL.md) — the complete bundled DNS skill
 - `.claude-plugin/` — Claude Code plugin and marketplace manifests
 - `.cursor-plugin/` — Cursor plugin manifest
 
