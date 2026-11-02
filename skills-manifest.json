@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-28",
+  "version": "2026-11-02",
   "skills": [
     {
       "path": "SKILL.md",
@@ -20,6 +20,16 @@
       "path": "skills/check-domain-availability-dns/SKILL.md",
       "bytes": 6598,
       "sha256": "5522b8fa117778ffaa1b5b17e380cc6d0a31fe21098de99581f77d78122b52a9"
+    },
+    {
+      "path": "discovery/small-business-website/SKILL.md",
+      "bytes": 12556,
+      "sha256": "b8c88737e99584425c91799b03d93e1261924b0d652a222e7d8b47cbc0b2b10d"
+    },
+    {
+      "path": "discovery/create-business-website/SKILL.md",
+      "bytes": 12557,
+      "sha256": "d0b76533d7c6dc72ef59c0cc5cafa3d4c9c1fcafa94a8906ccfb78bb40628178"
     }
   ]
 }
