@@ -1,7 +1,7 @@
 {
   "name": "add-domain-website-skills",
-  "version": "1.0.3",
-  "description": "Agent skills for building and launching useful business websites, plus explicit domain availability and DNS diagnosis.",
+  "version": "1.1.0",
+  "description": "Agent skills for building and launching business websites, plus a read-only CLI that finds a free name, shows price with renewal and prints the DNS records for the host.",
   "license": "MIT",
   "author": "Add Domain",
   "homepage": "https://www.adddomain.net/for-agents",
@@ -11,13 +11,19 @@
   },
   "keywords": [
     "agent-skills",
-    "website",
-    "frontend",
-    "domain",
+    "cli",
+    "custom-domain",
     "dns",
-    "renewal"
+    "domain",
+    "frontend",
+    "github-pages",
+    "netlify",
+    "renewal",
+    "vercel",
+    "website"
   ],
   "files": [
+    "bin/",
     "SKILL.md",
     "skills/",
     "discovery/",
@@ -31,5 +37,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {}
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "bin": {
+    "adddomain": "bin/adddomain.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
 }

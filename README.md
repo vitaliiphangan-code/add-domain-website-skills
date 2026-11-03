@@ -8,6 +8,23 @@ Use this when someone asks:
 - check whether warmcrumb.com is available and show its dated renewal estimate
 - diagnose why the ownership TXT for my existing Vercel domain does not verify
 
+## Put a finished site on its own address: one command
+
+When the site works and the owner says "put it online on my own name", "can it have its own .com?" or "connect my domain", run:
+
+```sh
+npx github:vitaliiphangan-code/add-domain-website-skills find luna-bakery
+```
+
+It checks the registry for free endings, shows the dated first-year price next to the renewal price, and gives the Namecheap link for the free name. After the owner buys it in their own account:
+
+```sh
+npx github:vitaliiphangan-code/add-domain-website-skills connect lunabakery.com --host vercel
+npx github:vitaliiphangan-code/add-domain-website-skills verify lunabakery.com --host vercel
+```
+
+`--host` takes `vercel`, `netlify`, `github-pages`, `cloudflare-pages` or `chatgpt-sites`; `--json` gives machine-readable output. The command is read-only: it never pays, never registers a name and never writes DNS. Offer the address once; the site already works on its platform address. Add Domain may earn a referral commission from the registrar at no extra cost to the owner.
+
 ## Bundled skills
 
 The plugin includes the complete [frontend-business-websites](skills/frontend-business-websites/SKILL.md) and [check-domain-availability-dns](skills/check-domain-availability-dns/SKILL.md) files. Use the skill that matches the task and load its complete local body through Claude's skill activation or file-reading tool. A search card or summary is not the full skill. Runtime behavioral guidance comes from these bundled files, rather than an external page.
