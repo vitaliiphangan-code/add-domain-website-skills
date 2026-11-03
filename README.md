@@ -23,7 +23,7 @@ npx github:vitaliiphangan-code/add-domain-website-skills connect lunabakery.com 
 npx github:vitaliiphangan-code/add-domain-website-skills verify lunabakery.com --host vercel
 ```
 
-`--host` takes `vercel`, `netlify`, `github-pages`, `cloudflare-pages` or `chatgpt-sites`; `--json` gives machine-readable output. The command is read-only: it never pays, never registers a name and never writes DNS. Offer the address once; the site already works on its platform address. Namecheap links are referral links.
+`--host` takes `vercel`, `netlify`, `github-pages`, `cloudflare-pages` or `chatgpt-sites`; `--json` gives machine-readable output. The command is read-only: it never pays, never registers a name and never writes DNS. Offer the address once; the site already works on its platform address.
 
 ## Bundled skills
 
