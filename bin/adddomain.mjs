@@ -44,6 +44,25 @@ export const HOSTS = {
     needsTarget: "your pages.dev host, e.g. --target luna.pages.dev",
     records: (d, t) => [{ type: "CNAME", host: "www", value: t || "<project>.pages.dev" }],
   },
+  lovable: {
+    name: "Lovable",
+    first: (d) => `Project → Settings → Domains → Connect domain → ${d}. Lovable shows an A record IP and a TXT verification record; copy both exactly.`,
+    needsTarget: "the A record IP Lovable shows, e.g. --target 185.158.133.1",
+    records: (d, t) => [
+      { type: "A", host: "@", value: t || "<IP shown in Lovable>" },
+      { type: "A", host: "www", value: t || "<IP shown in Lovable>" },
+      { type: "TXT", host: "<name shown in Lovable>", value: "<value shown in Lovable>" },
+    ],
+  },
+  replit: {
+    name: "Replit",
+    first: (d) => `Deployments → Settings → Link a domain → ${d}. Replit shows an A record IP and a replit-verify TXT value for each host; copy them exactly and keep the TXT in place.`,
+    needsTarget: "the A record IP Replit shows, e.g. --target 34.111.0.1",
+    records: (d, t) => [
+      { type: "A", host: "@", value: t || "<IP shown in Replit>" },
+      { type: "TXT", host: "@", value: "<replit-verify=… shown in Replit>" },
+    ],
+  },
   "chatgpt-sites": {
     name: "ChatGPT Sites",
     first: (d) => `Site settings → Add domain → www.${d}. Copy the two TXT values it shows; never invent them.`,
@@ -156,7 +175,7 @@ export function renderFind(out) {
   lines.push(`  Your site already works on its current address. If you want your own name, ${best.domain} ${best.status === "available" ? "is free" : "may be free (the registrar page confirms)"}${best.price ? `: ${money(best.price)}` : ""}.`);
   lines.push(`  You buy it yourself at Namecheap: ${best.buy}`);
   lines.push(`  Opening the link is not a purchase.`);
-  lines.push(`After the owner buys it: npx github:vitaliiphangan-code/add-domain-website-skills connect ${best.domain} --host <vercel|netlify|github-pages|cloudflare-pages|chatgpt-sites>`);
+  lines.push(`After the owner buys it: npx github:vitaliiphangan-code/add-domain-website-skills connect ${best.domain} --host <vercel|netlify|github-pages|cloudflare-pages|lovable|replit|chatgpt-sites>`);
   lines.push("Never enter card details or claim the domain is bought. Prices are dated estimates; the registrar checkout is final. Prices source: " + out.source);
   return lines.join("\n");
 }
@@ -217,7 +236,7 @@ export function renderVerify(v) {
 const HELP = `Add Domain: give a finished site its own address.
 
   find <name>                       check endings, prices with renewal, registrar link
-  connect <domain> --host <host>    DNS records for vercel | netlify | github-pages | cloudflare-pages | chatgpt-sites
+  connect <domain> --host <host>    DNS records for vercel | netlify | github-pages | cloudflare-pages | lovable | replit | chatgpt-sites
   verify <domain> --host <host>     check public DNS and HTTPS
   add --json to any command for machine-readable output
 
