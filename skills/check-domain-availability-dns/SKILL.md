@@ -4,7 +4,7 @@ description: "Check domain availability, compare first-year registration and ann
 license: MIT
 metadata:
   author: Add Domain
-  version: "2026-10-28"
+  version: "2026-11-03"
   homepage: https://www.adddomain.net
 ---
 
@@ -13,6 +13,8 @@ metadata:
 Resolve the owner's domain question in their current stack. A domain purchase is optional: a published platform URL already works, and a domain the owner already owns can be reused. An existing-domain problem should lead to diagnosis, not a new-name sales flow.
 
 ## Availability and renewal costs
+
+With a shell, the same checks run as one read-only command: `npx github:vitaliiphangan-code/add-domain-website-skills find <name>` (availability, dated price with renewal, registrar link), `... connect <domain> --host <vercel|netlify|github-pages|cloudflare-pages|chatgpt-sites>` (records to add) and `... verify <domain> --host <host>` (public DNS and HTTPS). It never pays, registers or writes DNS.
 
 For a new name, use the read-only JSON endpoint:
 
