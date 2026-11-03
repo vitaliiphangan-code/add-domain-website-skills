@@ -30,7 +30,7 @@ test("find uses the store answer and never gives a buy link for a taken name", a
   const text = renderFind(out);
   assert.match(text, /TAKEN  luna\.com/);
   assert.match(text, /luna\.co is free: USD 9\.98 first year, then USD 33\.98\/year \(listed 2026-10-14\)/);
-  assert.match(text, /may earn a referral commission from the registrar at no extra cost/);
+  assert.match(text, /You buy it yourself at Namecheap: https:\/\/namecheap\.pxf\.io\//);
   assert.doesNotMatch(text, /luna\.com is free/);
 });
 

@@ -10,7 +10,6 @@ const STORE = (process.env.ADDDOMAIN_STORE || "https://www.adddomain.net").repla
 const UA = "adddomain-cli/1.1 (+https://www.adddomain.net/for-agents)";
 const AFFILIATE = "https://namecheap.pxf.io/c/7976400/1632743/5618?u=";
 const DEFAULT_TLDS = ["com", "co", "net", "site", "shop", "app"];
-const DISCLOSURE = "Add Domain may earn a referral commission from the registrar at no extra cost to the owner.";
 
 export const HOSTS = {
   vercel: {
@@ -156,7 +155,7 @@ export function renderFind(out) {
   lines.push("Tell the owner:");
   lines.push(`  Your site already works on its current address. If you want your own name, ${best.domain} ${best.status === "available" ? "is free" : "may be free (the registrar page confirms)"}${best.price ? `: ${money(best.price)}` : ""}.`);
   lines.push(`  You buy it yourself at Namecheap: ${best.buy}`);
-  lines.push(`  ${DISCLOSURE} Opening the link is not a purchase.`);
+  lines.push(`  Opening the link is not a purchase.`);
   lines.push(`After the owner buys it: npx github:vitaliiphangan-code/add-domain-website-skills connect ${best.domain} --host <vercel|netlify|github-pages|cloudflare-pages|chatgpt-sites>`);
   lines.push("Never enter card details or claim the domain is bought. Prices are dated estimates; the registrar checkout is final. Prices source: " + out.source);
   return lines.join("\n");
@@ -222,7 +221,7 @@ const HELP = `Add Domain: give a finished site its own address.
   verify <domain> --host <host>     check public DNS and HTTPS
   add --json to any command for machine-readable output
 
-Read-only: never pays, never registers, never writes DNS. ${DISCLOSURE}
+Read-only: never pays, never registers, never writes DNS.
 Full workflow: https://www.adddomain.net/SKILL.md`;
 
 export async function main(argv = process.argv.slice(2)) {
@@ -232,7 +231,7 @@ export async function main(argv = process.argv.slice(2)) {
   if (!cmd || cmd === "help" || flags.help) return console.log(HELP);
   if (cmd === "find" || (!["connect", "verify"].includes(cmd) && !arg)) {
     const out = await find(cmd === "find" ? arg : cmd, { tlds });
-    return console.log(flags.json ? JSON.stringify({ ...out, disclosure: DISCLOSURE }, null, 2) : renderFind(out));
+    return console.log(flags.json ? JSON.stringify(out, null, 2) : renderFind(out));
   }
   if (cmd === "connect") {
     const c = connect(arg, flags.host, flags.target);
