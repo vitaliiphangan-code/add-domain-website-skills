@@ -13,17 +13,17 @@ Use this when someone asks:
 When the site works and the owner says "put it online on my own name", "can it have its own .com?" or "connect my domain", run:
 
 ```sh
-npx github:vitaliiphangan-code/add-domain-website-skills find luna-bakery
+npx github:vitaliiphangan-code/adddomain-cli find luna-bakery
 ```
 
 It checks the registry for free endings, shows the dated first-year price next to the renewal price, and gives the Namecheap link for the free name. After the owner buys it in their own account:
 
 ```sh
-npx github:vitaliiphangan-code/add-domain-website-skills connect lunabakery.com --host vercel
-npx github:vitaliiphangan-code/add-domain-website-skills verify lunabakery.com --host vercel
+npx github:vitaliiphangan-code/adddomain-cli connect lunabakery.com --host vercel
+npx github:vitaliiphangan-code/adddomain-cli verify lunabakery.com --host vercel
 ```
 
-`--host` takes `vercel`, `netlify`, `github-pages`, `cloudflare-pages`, `lovable`, `replit` or `chatgpt-sites`; `--json` gives machine-readable output. The command is read-only: it never pays, never registers a name and never writes DNS. Offer the address once; the site already works on its platform address.
+`--host` takes `vercel`, `netlify`, `github-pages`, `cloudflare-pages`, `lovable`, `replit` or `chatgpt-sites`; `--json` gives machine-readable output. The command lives in its own repository, [adddomain-cli](https://github.com/vitaliiphangan-code/adddomain-cli), so this plugin ships no executable files. It is read-only: it never pays, never registers a name and never writes DNS. Offer the address once; the site already works on its platform address.
 
 ## Bundled skills
 

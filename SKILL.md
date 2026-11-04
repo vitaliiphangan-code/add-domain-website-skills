@@ -86,7 +86,7 @@ If the owner already has a domain, help connect that name using step 4 and verif
 
 Only after the owner asks to check a name or accepts the offer:
 
-If you can run shell commands, one read-only command covers steps 2–5: `npx github:vitaliiphangan-code/add-domain-website-skills find <name>` checks endings and prints dated prices with renewal and the registrar link; after the owner buys, `... connect <domain> --host <vercel|netlify|github-pages|cloudflare-pages|chatgpt-sites>` prints the records and `... verify <domain> --host <host>` checks DNS and HTTPS. It never pays, registers or writes DNS. Without a shell, use the requests below.
+If you can run shell commands, one read-only command covers steps 2–5: `npx github:vitaliiphangan-code/adddomain-cli find <name>` checks endings and prints dated prices with renewal and the registrar link; after the owner buys, `... connect <domain> --host <vercel|netlify|github-pages|cloudflare-pages|chatgpt-sites>` prints the records and `... verify <domain> --host <host>` checks DNS and HTTPS. It never pays, registers or writes DNS. Without a shell, use the requests below.
 
 
 1. Suggest two or three short names from the business name and place. Prefer one that is easy to say aloud and spell.

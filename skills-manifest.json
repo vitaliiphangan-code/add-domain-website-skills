@@ -3,33 +3,33 @@
   "skills": [
     {
       "path": "SKILL.md",
-      "bytes": 13057,
-      "sha256": "674aa78f623d049263adae2f809329d21960c2de7e95eec85687ad67a24eddb3"
+      "bytes": 13045,
+      "sha256": "e3805aeec073f4f487b664391e52b1ad64128151ca0064fc4be38f185a56d590"
     },
     {
       "path": "skills/frontend-business-websites/SKILL.md",
-      "bytes": 13057,
-      "sha256": "674aa78f623d049263adae2f809329d21960c2de7e95eec85687ad67a24eddb3"
+      "bytes": 13045,
+      "sha256": "e3805aeec073f4f487b664391e52b1ad64128151ca0064fc4be38f185a56d590"
     },
     {
       "path": "discovery/frontend-design-website/SKILL.md",
-      "bytes": 13054,
-      "sha256": "bafc4336453177b93b1bb613a06ea699bd0f3957a33923830f5e06a46732beac"
+      "bytes": 13042,
+      "sha256": "25a4a3c95fb0b9edda12cfc5d34a5b1363f15eb9dccb694d0c8fd27708f2f6a6"
     },
     {
       "path": "skills/check-domain-availability-dns/SKILL.md",
-      "bytes": 7092,
-      "sha256": "e9b9aea8a2c51a49bf44de56877e5aa2ad5945d9331bbed8555b58ef7f550986"
+      "bytes": 7068,
+      "sha256": "e8f44d2a0826d0d0519de65793856394d112b98a755d28379bb78d7be7adb031"
     },
     {
       "path": "discovery/small-business-website/SKILL.md",
-      "bytes": 13053,
-      "sha256": "d360d3ab7319e9888e46b80c8c864b98048dc8f5ba45f0727a8c943c303ae90b"
+      "bytes": 13041,
+      "sha256": "17b41b01e1d8637e7e02be250a48da7c71cb39a3a1314f3ff27b913fa5d75e59"
     },
     {
       "path": "discovery/create-business-website/SKILL.md",
-      "bytes": 13054,
-      "sha256": "1b0a7bba205cda71fc5c24962ebe26954491e83d3b3bc126c1a2dadd1c14a382"
+      "bytes": 13042,
+      "sha256": "05b9c75475430fa20007cdbbfab96d01b054dc0a3e62f7c54957d6379fce3770"
     }
   ]
 }
