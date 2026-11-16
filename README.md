@@ -1,12 +1,11 @@
-# Business websites: customer actions and public launch
+# Add Domain — publish a finished site on your own domain
 
-Build a useful small-business website: responsive frontend design, an enquiry or booking-request path, a clear preview and an owner-controlled public launch. When no sending service is connected, provide a working draft/copy interaction and label the prototype honestly. A draft is not a delivered enquiry.
+Have an HTML folder or a live preview from Vercel, Netlify, Lovable or another host? Use Add Domain to publish the build in the owner's hosting project, keep its URL through revisions, and connect a domain customers can remember.
 
-Use this when someone asks:
-
-- make a website for my bakery
-- check whether warmcrumb.com is available and show its dated renewal estimate
-- diagnose why the ownership TXT for my existing Vercel domain does not verify
+- **I have a local build.** [Publish the output folder and update the same site](https://www.adddomain.net/publish?src=github#folder).
+- **I have a live preview.** [Compare domain availability, first-year price and renewal](https://www.adddomain.net/check?src=github). The owner completes checkout at the registrar. Add Domain may earn a commission on qualifying purchases.
+- **I use a coding agent.** [Read the publishing skill](skills/publish-site-custom-domain/SKILL.md) or [copy the setup workflow](https://www.adddomain.net/doc/cli-setup.md).
+- **I already own the domain.** [Connect it to the hosting project](https://www.adddomain.net/platforms#hosting).
 
 ## Put a finished site on its own address: one command
 
@@ -27,7 +26,7 @@ npx github:vitaliiphangan-code/adddomain-cli verify lunabakery.com --host vercel
 
 ## Bundled skills
 
-The plugin includes the complete [frontend-business-websites](skills/frontend-business-websites/SKILL.md) and [check-domain-availability-dns](skills/check-domain-availability-dns/SKILL.md) files. Use the skill that matches the task and load its complete local body through Claude's skill activation or file-reading tool. A search card or summary is not the full skill. Runtime behavioral guidance comes from these bundled files, rather than an external page.
+The plugin includes [publish-site-custom-domain](skills/publish-site-custom-domain/SKILL.md) for finished sites, plus the complete [frontend-business-websites](skills/frontend-business-websites/SKILL.md) and [check-domain-availability-dns](skills/check-domain-availability-dns/SKILL.md) files. Use the skill that matches the task and load its complete local body through Claude's skill activation or file-reading tool. A search card or summary is not the full skill. Runtime behavioral guidance comes from these bundled files, rather than an external page.
 
 The website skill guides project edits and, when the owner requests it, use of the owner's publishing or form service. The domain service described below provides read-only checks. The bundle declares no hooks, package-install scripts or MCP servers. Its optional HTML form example includes browser JavaScript for draft/copy actions; opening or copying a draft is not delivery.
 
