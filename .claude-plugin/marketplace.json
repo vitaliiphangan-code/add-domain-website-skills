@@ -1,6 +1,6 @@
 {
   "name": "add-domain",
-  "description": "Agent skills for building launch-ready small-business websites.",
+  "description": "Add Domain skills for publishing websites and connecting custom domains.",
   "owner": {
     "name": "Add Domain",
     "url": "https://www.adddomain.net"
@@ -9,8 +9,8 @@
     {
       "name": "add-domain-websites",
       "source": "./",
-      "description": "Build and launch small-business websites with clear customer actions: enquiries, booking requests and order paths, responsive frontend design, truthful content and owner handover. Connect the owner’s service or label a prototype honestly; offer an own address when ready to share.",
-      "version": "1.1.1"
+      "description": "Publish a finished website, update a client preview at the same URL, and connect a custom domain with Add Domain. Check availability and renewal prices, get a registrar purchase link, and verify the site's DNS and HTTPS.",
+      "version": "1.2.0"
     }
   ]
 }
