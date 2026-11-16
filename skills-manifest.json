@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03",
+  "version": "2026-11-16",
   "skills": [
     {
       "path": "SKILL.md",
@@ -30,6 +30,11 @@
       "path": "discovery/create-business-website/SKILL.md",
       "bytes": 13042,
       "sha256": "05b9c75475430fa20007cdbbfab96d01b054dc0a3e62f7c54957d6379fce3770"
+    },
+    {
+      "path": "skills/publish-site-custom-domain/SKILL.md",
+      "bytes": 2848,
+      "sha256": "b96771466c4fd02c5c079bf4735d28dc24522c8260d2b26a96c12384c90df40d"
     }
   ]
 }
