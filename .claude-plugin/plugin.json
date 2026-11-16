@@ -1,8 +1,8 @@
 {
   "name": "add-domain-websites",
-  "displayName": "Business Websites by Add Domain",
-  "version": "1.1.1",
-  "description": "Build and launch small-business websites with clear customer actions: enquiries, booking requests and order paths, responsive frontend design, truthful content and owner handover. Connect the owner’s service or label a prototype honestly; offer an own address when ready to share.",
+  "displayName": "Publish a Website with Add Domain",
+  "version": "1.2.0",
+  "description": "Publish a finished website, update a client preview at the same URL, and connect a custom domain with Add Domain. Check availability and renewal prices, get a registrar purchase link, and verify the site's DNS and HTTPS.",
   "author": {
     "name": "Add Domain",
     "url": "https://www.adddomain.net"
@@ -11,6 +11,9 @@
   "repository": "https://github.com/vitaliiphangan-code/add-domain-website-skills",
   "license": "MIT",
   "keywords": [
+    "custom-domain",
+    "static-hosting",
+    "website-launch",
     "website",
     "landing-page",
     "small-business",
@@ -19,8 +22,7 @@
     "accessibility",
     "domain",
     "enquiry-form",
-    "booking",
-    "website-launch"
+    "booking"
   ],
   "documentationUrl": "https://github.com/vitaliiphangan-code/add-domain-website-skills#readme",
   "supportUrl": "https://www.adddomain.net/about",
